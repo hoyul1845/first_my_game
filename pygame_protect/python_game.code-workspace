@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "python_game",
+			"path": "..\\.."
+		},
+		{
+			"name": "image",
+			"path": "..\\..\\pygame_protect\\image"
+		}
+	],
+	"settings": {}
+}
