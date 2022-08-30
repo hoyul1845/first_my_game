@@ -45,18 +45,17 @@ character_y_pos = screen_height - character_height - stage_height
 character_to_x = 0
 
 # 캐릭터 이동 속도
-character_speed = 50
-
+character_speed = 30
 # 무기 만들기
 weapon = pygame.image.load(os.path.join(image_path, "weapon.png"))
 weapon_size = weapon.get_rect().size
 weapon_width = weapon_size[0]
 
 # 무기는 한 번에 여러 발 발사 가능
-weapons = []
+weapons = [] 
 
 # 무기 이동 속도
-weapon_speed  =    200
+weapon_speed  =    10                                                      
                 
 # 공 만들기 (4개 크기에 대해 따로 처리)
 ball_images = [
@@ -90,7 +89,7 @@ total_time = 100
 start_ticks = pygame.time.get_ticks() # 시작 시간 정의
 
 # 게임종료 메시지 / TimeOut,(시간 초과 실패) Mission Complate,(성공) Game Over (캐릭터 공에 맞음)
-game_result = "-9999999999999999999999999999999999"
+game_result = "But it Blocked"
 
 
 # 1. 사용자 게임 초기화 (배경화면, 게임이미지, 좌표, 속도, 폰트 등)
@@ -246,7 +245,7 @@ while running:
 
     # 모든 공을 없앤 경우 게임 종료
     if len(balls) == 0:
-        game_result = "Error^&*^#%$^%#%^$^%$#T%&#^$%#"
+        game_result = "Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut Your Falut"
         running = False
                 
      
@@ -264,12 +263,12 @@ while running:
         
         # 경과 시간 계산
         elapsed_time = (pygame.time.get_ticks() - start_ticks) / 1000 # ms -> s
-        timer = game_font.render("Time : {}".format(int(total_time - elapsed_time)), True,  (0, 250, 250)) 
+        timer = game_font.render("Time : {}".format(int(total_time - elapsed_time)), True,  (255, 0, 0)) 
         screen.blit(timer, (10, 10))
         
         # 시간 초과 했다면
         if total_time - elapsed_time <= 0:
-            game_result = "..."
+            game_result = "But time is over"
             running = False
     
     
